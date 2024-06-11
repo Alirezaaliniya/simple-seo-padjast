@@ -2,7 +2,7 @@
 /*
  * Plugin Name:       افزونه سئو اختصاصی پادجست
  * Plugin URI:        https://padjast.ir
- * Description:       Handle the basics with this plugin.
+ * Description:       تنظیم ساده و آسان موارد پایه سئو برای لندینگ ها
  * Version:           1
  * Requires at least: 6.4
  * Requires PHP:      7.4
