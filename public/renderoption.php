@@ -16,15 +16,18 @@ function padjast_render_head() {
     global $google_code;
 
     ?>
-    <meta name="twitter:description" content="<?php echo esc_attr($description_seo); ?>">
-    <meta property="og:description" content="<?php echo esc_attr($description_seo); ?>">
-    <meta name="description" content="<?php echo esc_attr($description_seo); ?>">
+    <?php echo $google_code;?>
 
     <meta name="twitter:title" content="<?php echo esc_attr($seo_title);?>">
     <meta property="og:site_name" content="<?php echo esc_attr($seo_title);?>">
     <meta property="og:title" content="<?php echo esc_attr($seo_title);?>">
+    
+    <meta name="twitter:description" content="<?php echo esc_attr($description_seo); ?>">
+    <meta property="og:description" content="<?php echo esc_attr($description_seo); ?>">
+    <meta name="description" content="<?php echo esc_attr($description_seo); ?>">
 
-    <meta name="google-site-verification" content="<?php echo esc_attr($google_code);?>">
+
+
 
 
 

@@ -60,7 +60,7 @@ function padjast_register_settings() {
     // Add a new field for "Google Code"
     add_settings_field(
         'padjast_google_code',           // Field ID
-        'کد سرچ کنسول',                   // Field Title
+        'کد html سرچ کنسول',                   // Field Title
         'padjast_google_code_callback',  // Callback function to display the field
         'padjast_seo',                   // Page to display the field
         'padjast_seo_section'            // Section to display the field
@@ -110,5 +110,68 @@ function padjast_description_seo_callback() {
     $description_seo = isset($options['description_seo']) ? esc_attr($options['description_seo']) : '';
     echo '<textarea name="padjast_seo_settings[description_seo]" rows="5" cols="50">' . $description_seo . '</textarea>';
 }
+
+
+
+
+
+
+
+///learn how use padjast
+
+// Add a new menu item for "Padjast Learn"
+//پیشخوان وردپرس خوش آمدید
+//
+// تابعی برای نمایش باکس خوش آمدید
+function padjast_custom_dashboard_widget() {
+    echo '<div class="welcome-box">
+	<img src="'. PADJAST_ADMIN_URL .'/logo.svg" >
+        <h2>به لندینگ پادجست خوش آمدید!</h2>
+        <p>پادجست به شما کمک میکند تا در سریع ترین زمان ممکن وبسایت شخصی خود را راه اندازی کنید</p>
+		<p>جهت تنظیم سایت خود روی تنظمات کلیک کنید</p>
+		<a href="https://padjast.ir/my-account/support/">در صورت وجود ابهام یا مشکل سوال خود را  از طریق تیکت موجود در پنل کاربری padjast.ir مطرح کنید</a>
+        <!-- می‌توانید هر نوع محتوای دلخواه دیگری را اینجا اضافه کنید -->
+    </div>
+	<style>
+	.welcome-box {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+p , h2 , a{
+text-align:center;
+}
+
+}
+	</style>
+	';
+}
+function padjast_custom_dashboard_widget_2() {
+    echo '<div class="welcome-box">
+<style>.h_iframe-aparat_embed_frame{position:relative;}.h_iframe-aparat_embed_frame .ratio{display:block;width:100%;height:auto;}.h_iframe-aparat_embed_frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;}</style><div class="h_iframe-aparat_embed_frame"><span style="display: block;padding-top: 57%"></span><iframe src="https://www.aparat.com/video/video/embed/videohash/otho509/vt/frame"  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe></div>
+    </div>';
+}
+
+function padjast_custom_dashboard_widget_3() {
+    echo '<div class="welcome-box">
+<style>.h_iframe-aparat_embed_frame{position:relative;}.h_iframe-aparat_embed_frame .ratio{display:block;width:100%;height:auto;}.h_iframe-aparat_embed_frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;}.h_iframe-aparat_embed_frame {
+    height: 100%;
+    width: 100%;
+}
+</style><div class="h_iframe-aparat_embed_frame"><span style="display: block;padding-top: 57%"></span><iframe src="https://www.aparat.com/video/video/embed/videohash/b90c8sh/vt/frame"  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe></div>
+    </div>';
+}
+
+
+// تابعی برای اضافه کردن باکس خوش آمدید به پیشخوان
+function add_custom_dashboard_widget() {
+    wp_add_dashboard_widget('padjast_custom_dashboard_widget', 'خوش آمدید', 'padjast_custom_dashboard_widget');
+    wp_add_dashboard_widget('padjast_custom_dashboard_widget_2', 'آموزش تنظیمات', 'padjast_custom_dashboard_widget_2');
+    wp_add_dashboard_widget('padjast_custom_dashboard_widget_3', 'آموزش سئو', 'padjast_custom_dashboard_widget_3');
+}
+
+// اضافه کردن فیلتر برای فراخوانی تابع add_custom_dashboard_widget در زمان مناسب
+add_action('wp_dashboard_setup', 'add_custom_dashboard_widget' );
 
 
