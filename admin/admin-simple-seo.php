@@ -17,8 +17,8 @@ add_action('admin_menu', 'padjast_add_admin_menu');
 function padjast_add_admin_menu() {
     // Add a new top-level menu
     add_menu_page(
-        'تنظیمات سئو',   // Page title
-        'تنظیمات سئو',            // Menu title
+        'تنظیمات اتصال به گوگل',   // Page title
+        'تنظیمات اتصال به گوگل',            // Menu title
         'manage_options',         // Capability
         'padjast_seo',            // Menu slug
         'padjast_options_page',   // Callback function to render the options page
@@ -35,7 +35,7 @@ function padjast_options_page() {
             <?php
             settings_fields('padjast_options_group'); // Output security fields for the registered setting "padjast"
             do_settings_sections('padjast_seo');      // Output settings sections and their fields
-            submit_button('ذخیره تنظیمات سئو');           // Output save settings button
+            submit_button('ذخیره تنظیمات اتصال به گوگل');           // Output save settings button
             ?>
         </form>
     </div>
@@ -52,7 +52,7 @@ function padjast_register_settings() {
     // Add a new section in the "padjast" page.
     add_settings_section(
         'padjast_seo_section',           // Section ID
-        'تنظیمات سئو',                  // Section Title
+        'تنظیمات اتصال به گوگل',                  // Section Title
         'padjast_section_callback',      // Callback function to display the section description
         'padjast_seo'                    // Page to display the section
     );
@@ -60,7 +60,7 @@ function padjast_register_settings() {
     // Add a new field for "Google Code"
     add_settings_field(
         'padjast_google_code',           // Field ID
-        'کد html سرچ کنسول',                   // Field Title
+        'کد HTML tag گوگل سرچ کنسول:',                   // Field Title
         'padjast_google_code_callback',  // Callback function to display the field
         'padjast_seo',                   // Page to display the field
         'padjast_seo_section'            // Section to display the field
@@ -69,7 +69,7 @@ function padjast_register_settings() {
     // Add a new field for "SEO Title"
     add_settings_field(
         'padjast_seo_title',             // Field ID
-        'تایتل سئو',                     // Field Title
+        'عنوان (Title) لندینگ: 60 کاراکتر',                     // Field Title
         'padjast_seo_title_callback',    // Callback function to display the field
         'padjast_seo',                   // Page to display the field
         'padjast_seo_section'            // Section to display the field
@@ -78,7 +78,7 @@ function padjast_register_settings() {
     // Add a new field for "Description SEO"
     add_settings_field(
         'padjast_description_seo',       // Field ID
-        'دیسکریپشن سئو',               // Field Title
+        'توضیحات (Description) لندینگ:  160 کاراکتر',               // Field Title
         'padjast_description_seo_callback', // Callback function to display the field
         'padjast_seo',                   // Page to display the field
         'padjast_seo_section'            // Section to display the field
@@ -87,7 +87,7 @@ function padjast_register_settings() {
 
 // Section callback function
 function padjast_section_callback() {
-    echo '<p>تنظیمات سئو را در پایین درج کنید:</p>';
+    echo '<p>تنظیمات اتصال لندینگ به موتور جستجو گوگل</p>';
 }
 
 // Field callback function for "Google Code"
