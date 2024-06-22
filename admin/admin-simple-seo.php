@@ -126,10 +126,10 @@ function padjast_description_seo_callback() {
 function padjast_custom_dashboard_widget() {
     echo '<div class="welcome-box">
 	<img src="'. PADJAST_ADMIN_URL .'/logo.svg" >
-        <h2>به لندینگ پادجست خوش آمدید!</h2>
-        <p>پادجست به شما کمک میکند تا در سریع ترین زمان ممکن وبسایت شخصی خود را راه اندازی کنید</p>
+        <h2>به پنل کاربری لندینگ پیج ساز پادجست خوش آمدید😍</h2>
+        <p> پادجست به شما کمک می‌کند تا در سریع ترین زمان ممکن و با قیمت بسیار مناسب وبسایت شخصی خود را راه اندازی کنید.</p>
 		<p>جهت تنظیم سایت خود روی تنظیمات کلیک کنید</p>
-		<a href="https://padjast.ir/my-account/support/">در صورت وجود ابهام یا مشکل سوال خود را  از طریق تیکت موجود در پنل کاربری padjast.ir مطرح کنید</a>
+		<a href="/wp-admin/admin.php?page=padjast_seo"> جهت تنظیم لندینگ خود، روی منو تنظیمات کلیک کنید</a>
     </div>
 	<style>
 	.welcome-box {
