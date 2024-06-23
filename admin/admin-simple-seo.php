@@ -102,6 +102,7 @@ function padjast_seo_title_callback() {
     $options = get_option('padjast_seo_settings');
     $seo_title = isset($options['seo_title']) ? esc_attr($options['seo_title']) : '';
     echo '<input type="text" name="padjast_seo_settings[seo_title]" value="' . $seo_title . '" />';
+	update_option('blogname',  $options['seo_title']);
 }
 
 // Field callback function for "Description SEO"
@@ -109,6 +110,8 @@ function padjast_description_seo_callback() {
     $options = get_option('padjast_seo_settings');
     $description_seo = isset($options['description_seo']) ? esc_attr($options['description_seo']) : '';
     echo '<textarea name="padjast_seo_settings[description_seo]" rows="5" cols="50">' . $description_seo . '</textarea>';
+	update_option('blogdescription', $options['description_seo']);
+
 }
 
 
